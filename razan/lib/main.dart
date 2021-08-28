@@ -1,8 +1,9 @@
 
 
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+import 'screens/login.dart';
 import 'screens/sign_up.dart';
+import 'screens/home.dart';
 
 
 void main() {
@@ -19,8 +20,8 @@ class MyApp extends StatelessWidget {
       home: Home(), // first page of app
       //End of project 
       routes: {
-        "home" : (context){
-          return Home();
+        "login" : (context){
+          return Login();
         },
         "sign_up" : (context){
           return Signup();

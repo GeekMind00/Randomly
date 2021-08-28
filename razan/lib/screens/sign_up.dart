@@ -14,21 +14,19 @@ class Signup extends StatelessWidget {
         backgroundColor: Colors.red,
       ),
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.fromLTRB(20, 10, 10, 20),
         child: Form(
         child: Column(
           children: [
-            Text('Create your account' , style: TextStyle(fontSize: 30 ,fontWeight: FontWeight.bold),),
+            Text('SIGNUP' , style: TextStyle(fontSize: 30 ,fontWeight: FontWeight.bold),),
             SizedBox(height: 20,),
-            buildUserNameField(),
+            buildUserNameField(), // function to creste username Field
             SizedBox(height: 20,),
             buildEmailField(),  //function to create EmailField
             SizedBox(height: 20,),
             buildPasswordField(), // function to create Password Field
             SizedBox(height: 20,),
             Button('Sign Up', (){}), // class of buttons 
-            
-            
         ],
         ), 
       ),
