@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'screens/home.dart';
+import 'screens/sign_up.dart';
 
 
 void main() {
@@ -15,8 +16,16 @@ class MyApp extends StatelessWidget {
       
       //Start of Project
       title: "Mobtech",
-      home: Home() // first page of app
+      home: Home(), // first page of app
       //End of project 
+      routes: {
+        "home" : (context){
+          return Home();
+        },
+        "sign_up" : (context){
+          return Signup();
+        } 
+      },
       
     );
   }
