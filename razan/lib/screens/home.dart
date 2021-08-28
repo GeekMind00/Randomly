@@ -14,20 +14,21 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Login"),
         backgroundColor: Colors.red,
       ),
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.fromLTRB(20, 50, 20, 50),
         child: Form(
           child: Column(
             children: [
               SizedBox(
                 height: 20,
               ),
-              Text('LOGIN'),
+              Text('LOGIN' , style: TextStyle(fontSize: 30 ,fontWeight: FontWeight.bold),),
               SizedBox(
-                height: 20,
+                height: 40,
               ),
               buildEmailField(), //function to create EmailField
               SizedBox(
@@ -37,12 +38,13 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 20,
               ),
+              //Padding(padding: EdgeInsets.only(top: 100)),
               Button('Log In', (){}),
               Row(
                 
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(padding: EdgeInsets.only(top: 40)
+                  Padding(padding: EdgeInsets.only(top: 70)
                   
                   ),
                   Text("Don't have Acount , ", style: TextStyle(fontStyle: FontStyle.italic),),
@@ -51,7 +53,8 @@ class _HomeState extends State<Home> {
                       Navigator.pushNamed(context, 'sign_up');
                     },
                     child: Text('Sign Up',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+                    
                     ),
                   ),
                 ],

@@ -9,7 +9,8 @@ class Signup extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SignUp"),
+        centerTitle: true,
+        title: Text("Signup"),
         backgroundColor: Colors.red,
       ),
       body: Padding(
@@ -17,7 +18,7 @@ class Signup extends StatelessWidget {
         child: Form(
         child: Column(
           children: [
-            Text('Signup'),
+            Text('Create your account' , style: TextStyle(fontSize: 30 ,fontWeight: FontWeight.bold),),
             SizedBox(height: 20,),
             buildUserNameField(),
             SizedBox(height: 20,),
@@ -25,7 +26,7 @@ class Signup extends StatelessWidget {
             SizedBox(height: 20,),
             buildPasswordField(), // function to create Password Field
             SizedBox(height: 20,),
-            Button('Yes', (){}), // class of buttons 
+            Button('Sign Up', (){}), // class of buttons 
             
             
         ],
@@ -36,13 +37,4 @@ class Signup extends StatelessWidget {
 
     );
   }
-}
-TextFormField buildUserNameField(){
-  return TextFormField(
-    decoration: InputDecoration(
-        labelText: "User Name",
-        prefixIcon: Padding(
-            padding: EdgeInsets.all(10), child: Icon(Icons.person)),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
-  );
 }

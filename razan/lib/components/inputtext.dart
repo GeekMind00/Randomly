@@ -25,3 +25,13 @@ TextFormField buildPasswordField() {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
   );
 }
+
+TextFormField buildUserNameField(){
+  return TextFormField(
+    decoration: InputDecoration(
+        labelText: "User Name",
+        prefixIcon: Padding(
+            padding: EdgeInsets.all(10), child: Icon(Icons.person)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
+  );
+}
