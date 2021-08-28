@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'home.dart';
 import '../components/button.dart';
+import 'package:flutter/widgets.dart';
+import '../components/inputtext.dart';
 
 class Signup extends StatelessWidget {
   static String id='signupScreen';
@@ -25,7 +25,7 @@ class Signup extends StatelessWidget {
             SizedBox(height: 20,),
             buildPasswordField(), // function to create Password Field
             SizedBox(height: 20,),
-            Button(), // class of buttons 
+            Button('Yes', (){}), // class of buttons 
             
             
         ],

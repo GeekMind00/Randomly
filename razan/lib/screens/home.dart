@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test/screens/sign_up.dart';
 import '../components/button.dart';
+import '../components/inputtext.dart';
 
 class Home extends StatefulWidget {
   State<StatefulWidget> createState() {
@@ -36,7 +37,7 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 20,
               ),
-              Button(),
+              Button('Log In', (){}),
               Row(
                 
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -63,26 +64,6 @@ class _HomeState extends State<Home> {
   }
 }
 
-TextFormField buildEmailField() {
-  return TextFormField(
-    keyboardType: TextInputType.emailAddress,
-    decoration: InputDecoration(
-        labelText: "email",
-        prefixIcon: Padding(
-          padding: EdgeInsets.all(10),
-          child: Icon(Icons.email_rounded),
-        ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
-  );
-}
 
-TextFormField buildPasswordField() {
-  return TextFormField(
-    obscureText: true,
-    decoration: InputDecoration(
-        labelText: "Password",
-        prefixIcon: Padding(
-            padding: EdgeInsets.all(10), child: Icon(Icons.vpn_key_rounded)),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
-  );
-}
+
+

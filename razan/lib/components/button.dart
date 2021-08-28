@@ -1,20 +1,31 @@
+
+
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Button extends StatelessWidget {
-  /* const Button({
-    Key key,
-    this.text,
-    //this.press,
-  }) : super(key: key);
+  
   final String text;
-  final Function press; */
+  final Function press;
+  const Button(this.text , this.press);
+  
   @override 
   Widget build(BuildContext context) {
-    return Container(
-      child: ElevatedButton(
-        onPressed: (){},
-        child: Text("LOGIN"),
-      ),
-    );
+
+    return ElevatedButton(
+      onPressed: (){},
+      child: Text(text),
+      style: ElevatedButton.styleFrom(
+        primary: Colors.red,
+        padding: EdgeInsetsDirectional.all(15),
+        textStyle: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold
+        )
+      )
+      
+      );
   }
+  
 }
