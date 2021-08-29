@@ -9,13 +9,15 @@ class MyDrawer extends StatelessWidget {
         UserAccountsDrawerHeader(
           accountName: Text("Habiba Mahmoud"),
           accountEmail: Text("habiba@gmail.com"),
-          currentAccountPicture: CircleAvatar(child: Icon(Icons.person)),
+          currentAccountPicture: CircleAvatar(
+              child: Icon(Icons.person), backgroundColor: Colors.white),
           decoration: BoxDecoration(
-              color: Colors.red,
-              image: DecorationImage(
+            color: Colors.red,
+            /*image: DecorationImage(
                   image: NetworkImage(
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2QK0lKvT-2XH8G47-Ea0EyHMgIhkO4Kxp7A&usqp=CAU"),
-                  fit: BoxFit.cover)),
+                  fit: BoxFit.cover)*/
+          ),
         ),
         ListTile(
           title: Text("Home"),
@@ -44,7 +46,7 @@ class MyDrawer extends StatelessWidget {
           title: Text("Logout"),
           leading: Icon(Icons.logout),
           onTap: () {
-            Navigator.of(context).pushNamed("login");
+            Navigator.of(context).pushNamed("home");
           },
         )
       ],
