@@ -26,7 +26,7 @@ class _LoginState extends State<Login> {
         title: Text("Login"),
         backgroundColor: Colors.red,
       ),
-      endDrawer: MyDrawer(),
+      drawer: MyDrawer(),
       body: Padding(
         padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
         child: Form(

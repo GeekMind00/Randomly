@@ -36,3 +36,14 @@ TextFormField buildUserNameField(TextEditingController myController) {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
   );
 }
+
+TextFormField buildSearchField(TextEditingController myController) {
+  return TextFormField(
+    controller: myController,
+    decoration: InputDecoration(
+        labelText: " Search",
+        prefixIcon:
+            Padding(padding: EdgeInsets.all(9), child: Icon(Icons.search_rounded)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
+  );
+}
