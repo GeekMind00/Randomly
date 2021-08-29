@@ -35,9 +35,7 @@ class HomeState extends State<Home> {
             SizedBox(
               height: 40,
             ),
-            Button('Search', () {
-              print(searchNumber.text);
-            }),
+            Button('Search', () {}),
             SizedBox(
               height: 40,
             ),
