@@ -6,11 +6,14 @@ import '../components/mydrawer.dart';
 
 class Login extends StatefulWidget {
   State<StatefulWidget> createState() {
-    return _HomeState();
+    return _LoginState();
   }
 }
 
-class _HomeState extends State<Login> {
+class _LoginState extends State<Login> {
+  TextEditingController email = new TextEditingController();
+  TextEditingController password = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,11 +38,11 @@ class _HomeState extends State<Login> {
               SizedBox(
                 height: 40,
               ),
-              buildEmailField(), //function to create EmailField
+              buildEmailField(email), //function to create EmailField
               SizedBox(
                 height: 20,
               ),
-              buildPasswordField(), // function to create Password Field
+              buildPasswordField(password), // function to create Password Field
               SizedBox(
                 height: 20,
               ),

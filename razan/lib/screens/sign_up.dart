@@ -5,6 +5,10 @@ import '../components/inputtext.dart';
 import '../components/mydrawer.dart';
 
 class Signup extends StatelessWidget {
+  final TextEditingController email = new TextEditingController();
+  final TextEditingController password = new TextEditingController();
+  final TextEditingController username = new TextEditingController();
+
   static String id = 'signupScreen';
   @override
   Widget build(BuildContext context) {
@@ -27,15 +31,15 @@ class Signup extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              buildUserNameField(), // function to creste username Field
+              buildUserNameField(username), // function to creste username Field
               SizedBox(
                 height: 20,
               ),
-              buildEmailField(), //function to create EmailField
+              buildEmailField(email), //function to create EmailField
               SizedBox(
                 height: 20,
               ),
-              buildPasswordField(), // function to create Password Field
+              buildPasswordField(password), // function to create Password Field
               SizedBox(
                 height: 20,
               ),

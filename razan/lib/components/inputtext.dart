@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-
-TextFormField buildEmailField() {
+TextFormField buildEmailField(TextEditingController myController) {
   return TextFormField(
+    controller: myController,
     keyboardType: TextInputType.emailAddress,
     decoration: InputDecoration(
         labelText: "email",
@@ -14,9 +14,9 @@ TextFormField buildEmailField() {
   );
 }
 
-
-TextFormField buildPasswordField() {
+TextFormField buildPasswordField(TextEditingController myController) {
   return TextFormField(
+    controller: myController,
     obscureText: true,
     decoration: InputDecoration(
         labelText: "Password",
@@ -26,12 +26,13 @@ TextFormField buildPasswordField() {
   );
 }
 
-TextFormField buildUserNameField(){
+TextFormField buildUserNameField(TextEditingController myController) {
   return TextFormField(
+    controller: myController,
     decoration: InputDecoration(
         labelText: "User Name",
-        prefixIcon: Padding(
-            padding: EdgeInsets.all(10), child: Icon(Icons.person)),
+        prefixIcon:
+            Padding(padding: EdgeInsets.all(10), child: Icon(Icons.person)),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
   );
 }
