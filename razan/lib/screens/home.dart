@@ -1,5 +1,8 @@
-import 'dart:html';
+
+import 'package:test/components/button.dart';
+
 import '../components/mydrawer.dart';
+
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -20,12 +23,20 @@ class HomeState extends State<Home> {
             IconButton(icon: Icon(Icons.account_box),onPressed: () {})
           ], */
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.search),
-          onPressed: () {},
-        ),
+        
       ),
       endDrawer: MyDrawer(),
+      body: Container(
+        padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: <Widget>[
+            Button('Generate',(){})
+          ],
+        ),
+        
+        
+      ),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-TextFormField buildEmailField(TextEditingController myController) {
+TextFormField buildEmailField(TextEditingController email) {
   return TextFormField(
-    controller: myController,
+    controller: email,
     keyboardType: TextInputType.emailAddress,
     decoration: InputDecoration(
         labelText: "email",

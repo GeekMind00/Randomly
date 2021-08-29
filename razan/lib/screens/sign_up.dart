@@ -5,9 +5,11 @@ import '../components/inputtext.dart';
 import '../components/mydrawer.dart';
 
 class Signup extends StatelessWidget {
-  final TextEditingController email = new TextEditingController();
-  final TextEditingController password = new TextEditingController();
-  final TextEditingController username = new TextEditingController();
+  final TextEditingController signupEmail = new TextEditingController();
+  final TextEditingController signupPassword = new TextEditingController();
+  final TextEditingController signupUsername = new TextEditingController();
+
+  GlobalKey<FormState> signupFormstate = new GlobalKey<FormState>();
 
   static String id = 'signupScreen';
   @override
@@ -20,30 +22,34 @@ class Signup extends StatelessWidget {
       ),
       endDrawer: MyDrawer(),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(20, 10, 10, 20),
+        padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
         child: Form(
-          child: Column(
-            children: [
+          key: signupFormstate,
+          child: ListView(
+            children: <Widget>[
               Text(
                 'SIGNUP',
+                textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 20,
               ),
-              buildUserNameField(username), // function to creste username Field
+              buildUserNameField(signupUsername), // function to creste username Field
               SizedBox(
                 height: 20,
               ),
-              buildEmailField(email), //function to create EmailField
+              buildEmailField(signupEmail), //function to create EmailField
               SizedBox(
                 height: 20,
               ),
-              buildPasswordField(password), // function to create Password Field
+              buildPasswordField(signupPassword), // function to create Password Field
               SizedBox(
                 height: 20,
               ),
-              Button('Sign Up', () {}), // class of buttons
+              Button('Sign Up', () {
+                print('hi');
+              }), // class of buttons
             ],
           ),
         ),

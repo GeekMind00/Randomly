@@ -13,12 +13,12 @@ class Button extends StatelessWidget {
 
     return ElevatedButton(
       
-      onPressed: (){},
+      onPressed: (){press();},
       child: Text(text),
       style: ElevatedButton.styleFrom(
         
         primary: Colors.red,
-        fixedSize: Size(110, 50),
+        fixedSize: Size(10, 50),
         //padding: EdgeInsetsDirectional.all(25),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50)

@@ -11,8 +11,12 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  TextEditingController email = new TextEditingController();
-  TextEditingController password = new TextEditingController();
+  //Controller 
+  TextEditingController loginEmail = new TextEditingController();
+    TextEditingController loginPassword = new TextEditingController();
+
+  GlobalKey<FormState> loginFormstate = new GlobalKey<FormState>();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -24,30 +28,32 @@ class _LoginState extends State<Login> {
       ),
       endDrawer: MyDrawer(),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        padding: EdgeInsets.fromLTRB(20, 40, 20, 40),
         child: Form(
-          child: Column(
-            children: [
+          key: loginFormstate,
+          child: ListView(
+            children: <Widget>[
               SizedBox(
                 height: 20,
               ),
               Text(
                 'LOGIN',
+                textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 40,
               ),
-              buildEmailField(email), //function to create EmailField
+              buildEmailField(loginEmail), //function to create EmailField
               SizedBox(
                 height: 20,
               ),
-              buildPasswordField(password), // function to create Password Field
+              buildPasswordField(loginPassword), // function to create Password Field
               SizedBox(
                 height: 20,
               ),
               //Padding(padding: EdgeInsets.only(top: 100)),
-              Button('Log In', () {}),
+              Button('Log In', () {print(loginPassword.text);}),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
