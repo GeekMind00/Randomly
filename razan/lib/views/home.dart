@@ -17,15 +17,38 @@ class HomeState extends State<Home> {
   TextEditingController searchNumber = new TextEditingController();
 
   generateRandomNumber() {
-    /*final numbersList = new List.generate(10, (_) => Random().nextInt(20));
-    numbersList.shuffle();
-    print(numbersList);*/
-
     Set<int> numbersList = Set();
     while (numbersList.length < 10000) {
       numbersList.add(Random().nextInt(1000000000) + 1);
     }
     print(numbersList);
+  }
+
+  popUp() {
+    var validator = true;
+    return showDialog(
+        context: context,
+        builder: (context) {
+          if (validator) {
+            return AlertDialog(
+              content: Text("FOUND"),
+              actions: <Widget>[
+                Button("ok", () {
+                  Navigator.of(context).pop();
+                })
+              ],
+            );
+          } else {
+            return AlertDialog(
+              content: Text("NOT FOUND"),
+              actions: <Widget>[
+                Button("ok", () {
+                  Navigator.of(context).pop();
+                })
+              ],
+            );
+          }
+        });
   }
 
   Widget build(BuildContext context) {
@@ -49,7 +72,9 @@ class HomeState extends State<Home> {
             SizedBox(
               height: 40,
             ),
-            Button('Search', () {}),
+            Button('Search', () {
+              popUp();
+            }),
             SizedBox(
               height: 40,
             ),
