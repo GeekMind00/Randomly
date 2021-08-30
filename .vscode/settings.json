@@ -1,8 +1,0 @@
-{
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#331876",
-        "titleBar.activeBackground": "#4721A6",
-        "titleBar.activeForeground": "#FAF9FE"
-    },
-    "cmake.sourceDirectory": "${workspaceFolder}/razan/linux"
-}
