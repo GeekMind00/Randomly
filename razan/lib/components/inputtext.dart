@@ -21,7 +21,7 @@ TextFormField buildPasswordField(TextEditingController myController) {
     decoration: InputDecoration(
         labelText: "Password",
         prefixIcon: Padding(
-            padding: EdgeInsets.all(10), child: Icon(Icons.vpn_key_rounded,color: Color(0xff23449d),)),
+            padding: EdgeInsets.all(10), child: Icon(Icons.lock,color: Color(0xff23449d),)),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
   );
 }
