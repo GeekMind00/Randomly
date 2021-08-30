@@ -18,7 +18,7 @@ class Signup extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Signup"),
-        backgroundColor: Colors.red,
+        backgroundColor: Color(0xff23449d),
       ),
       drawer: MyDrawer(),
       body: Padding(

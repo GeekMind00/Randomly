@@ -17,7 +17,7 @@ class Button extends StatelessWidget {
       child: Text(text),
       style: ElevatedButton.styleFrom(
         
-        primary: Colors.red,
+        primary: Color(0xff23449d),
         fixedSize: Size(10, 50),
         //padding: EdgeInsetsDirectional.all(25),
         shape: RoundedRectangleBorder(

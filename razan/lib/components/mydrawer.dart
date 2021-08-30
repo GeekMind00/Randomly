@@ -12,7 +12,7 @@ class MyDrawer extends StatelessWidget {
           currentAccountPicture: CircleAvatar(
               child: Icon(Icons.person), backgroundColor: Colors.white),
           decoration: BoxDecoration(
-            color: Colors.red,
+            color: Color(0xff23449d),
             /*image: DecorationImage(
                   image: NetworkImage(
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2QK0lKvT-2XH8G47-Ea0EyHMgIhkO4Kxp7A&usqp=CAU"),

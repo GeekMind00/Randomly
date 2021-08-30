@@ -24,7 +24,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Login"),
-        backgroundColor: Colors.red,
+        backgroundColor: Color(0xff23449d),
       ),
       drawer: MyDrawer(),
       body: Padding(
@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.red),
+                          fontWeight: FontWeight.bold, color: Color(0xff23449d)),
                     ),
                   ),
                 ],
