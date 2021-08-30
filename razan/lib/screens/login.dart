@@ -59,7 +59,7 @@ class _LoginState extends State<Login> {
                 children: [
                   Padding(padding: EdgeInsets.only(top: 70)),
                   Text(
-                    "Don't have Acount , ",
+                    "Don't have Account? ",
                     style: TextStyle(fontStyle: FontStyle.italic),
                   ),
                   GestureDetector(

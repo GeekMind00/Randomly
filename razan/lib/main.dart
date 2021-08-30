@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         //Start of Project
         debugShowCheckedModeBanner: false,
-        title: "Mobtech",
+        title: "Randomly",
         home: Splash(), // first page of app
         //End of project
         routes: {
