@@ -11,12 +11,19 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  //Controller 
+  //Controller
   TextEditingController loginEmail = new TextEditingController();
-    TextEditingController loginPassword = new TextEditingController();
+  TextEditingController loginPassword = new TextEditingController();
 
   GlobalKey<FormState> loginFormstate = new GlobalKey<FormState>();
-  
+
+  logIn() {
+    if (loginFormstate.currentState!.validate()) {
+      print("not valid");
+    } else {
+      print("valid");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +55,15 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 20,
               ),
-              buildPasswordField(loginPassword), // function to create Password Field
+              buildPasswordField(
+                  loginPassword), // function to create Password Field
               SizedBox(
                 height: 20,
               ),
               //Padding(padding: EdgeInsets.only(top: 100)),
-              Button('Log In', () {print(loginPassword.text);}),
+              Button('Log In', () {
+                logIn();
+              }),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -69,7 +79,8 @@ class _LoginState extends State<Login> {
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Color(0xff23449d)),
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff23449d)),
                     ),
                   ),
                 ],

@@ -5,6 +5,8 @@ import '../components/mydrawer.dart';
 import 'package:flutter/material.dart';
 import '../components/inputtext.dart';
 
+import 'dart:math';
+
 class Home extends StatefulWidget {
   State<StatefulWidget> createState() {
     return HomeState();
@@ -13,7 +15,19 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
   TextEditingController searchNumber = new TextEditingController();
-  @override
+
+  generateRandomNumber() {
+    /*final numbersList = new List.generate(10, (_) => Random().nextInt(20));
+    numbersList.shuffle();
+    print(numbersList);*/
+
+    Set<int> numbersList = Set();
+    while (numbersList.length < 10000) {
+      numbersList.add(Random().nextInt(1000000000) + 1);
+    }
+    print(numbersList);
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -39,7 +53,9 @@ class HomeState extends State<Home> {
             SizedBox(
               height: 40,
             ),
-            Button('Generate', () {}),
+            Button('Generate', () {
+              generateRandomNumber();
+            }),
             SizedBox(
               height: 40,
             ),

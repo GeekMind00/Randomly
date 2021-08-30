@@ -35,7 +35,8 @@ class Signup extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              buildUserNameField(signupUsername), // function to creste username Field
+              buildUserNameField(
+                  signupUsername), // function to creste username Field
               SizedBox(
                 height: 20,
               ),
@@ -43,12 +44,13 @@ class Signup extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              buildPasswordField(signupPassword), // function to create Password Field
+              buildPasswordField(
+                  signupPassword), // function to create Password Field
               SizedBox(
                 height: 20,
               ),
               Button('Sign Up', () {
-                print('hi');
+                print("hi");
               }), // class of buttons
             ],
           ),
