@@ -60,7 +60,7 @@ TextFormField buildUserNameField(TextEditingController myController) {
         validator: (val) {
           if (val != null)
           {
-            return 'Please enter a username';
+            return val.length < 4 ? 'Please enter a valid username' : null;
           }else {
             return null;
           } 
