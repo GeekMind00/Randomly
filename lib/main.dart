@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:randomNumbersApp/screens/home.dart';
-import 'screens/login.dart';
-import 'screens/sign_up.dart';
-import 'screens/Splash.dart';
-import 'screens/home.dart';
+import 'package:randomNumbersApp/views/home.dart';
+import 'views/login.dart';
+import 'views/sign_up.dart';
+import 'views/Splash.dart';
+import 'views/home.dart';
 
 void main() {
   runApp(MyApp());

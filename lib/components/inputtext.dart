@@ -11,6 +11,16 @@ TextFormField buildEmailField(TextEditingController email) {
           child: Icon(Icons.email_rounded, color: Color(0xff23449d)),
         ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
+        validator: (val) {
+          print("here and value is = ");
+          print(val);
+          if(val != null) 
+          {
+            return !val.contains('@') ? 'Invalid Email' : null;
+          } else {
+            return null;
+          }
+        }
   );
 }
 
@@ -27,6 +37,14 @@ TextFormField buildPasswordField(TextEditingController myController) {
               color: Color(0xff23449d),
             )),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
+        validator: (val) {
+          if (val != null)
+          {
+            return val.length < 6 ? 'Password too short' : null;
+          }else {
+            return null;
+          } 
+        }
   );
 }
 
@@ -39,11 +57,20 @@ TextFormField buildUserNameField(TextEditingController myController) {
             padding: EdgeInsets.all(10),
             child: Icon(Icons.person, color: Color(0xff23449d))),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
+        validator: (val) {
+          if (val != null)
+          {
+            return val.length < 4 ? 'Please enter a valid username' : null;
+          }else {
+            return null;
+          } 
+        }
   );
 }
 
 TextFormField buildSearchField(TextEditingController myController) {
   return TextFormField(
+    keyboardType: TextInputType.number,
     controller: myController,
     decoration: InputDecoration(
         labelText: " Search",

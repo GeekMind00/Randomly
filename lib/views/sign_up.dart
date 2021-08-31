@@ -6,7 +6,13 @@ import '../components/mydrawer.dart';
 import '../db/database.dart';
 import 'package:randomNumbersApp/models/userModel.dart';
 
-class Signup extends StatelessWidget {
+class Signup extends StatefulWidget {
+  State<StatefulWidget> createState() {
+    return _SignupState();
+  }
+}
+
+class _SignupState extends State<Signup> {
   final TextEditingController signupEmail = new TextEditingController();
   final TextEditingController signupPassword = new TextEditingController();
   final TextEditingController signupUsername = new TextEditingController();
@@ -14,6 +20,14 @@ class Signup extends StatelessWidget {
   GlobalKey<FormState> signupFormstate = new GlobalKey<FormState>();
 
   static String id = 'signupScreen';
+  signup() {
+    if (signupFormstate.currentState!.validate()) {
+      print("not valid");
+    } else {
+      print("valid");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +72,8 @@ class Signup extends StatelessWidget {
                 // //   print(result[3].userName);
                 // user = await UsersDatabase.instance.readUser("sasaGame");
                 // print(user.userName);
+                // Button('Sign Up', () {
+                //   signup();
               }), // class of buttons
             ],
           ),

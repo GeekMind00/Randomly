@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:randomNumbersApp/screens/sign_up.dart';
+import 'package:randomNumbersApp/views/sign_up.dart';
 import '../components/button.dart';
 import '../components/inputtext.dart';
 import '../components/mydrawer.dart';
@@ -12,7 +12,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   //Controller
-  TextEditingController loginEmail = new TextEditingController();
+  TextEditingController loginUsername = new TextEditingController();
   TextEditingController loginPassword = new TextEditingController();
 
   GlobalKey<FormState> loginFormstate = new GlobalKey<FormState>();
@@ -51,7 +51,8 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 40,
               ),
-              buildEmailField(loginEmail), //function to create EmailField
+              buildUserNameField(
+                  loginUsername), //function to create Username field
               SizedBox(
                 height: 20,
               ),

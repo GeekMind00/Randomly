@@ -1,9 +1,17 @@
+import 'dart:io';
+import 'dart:async';
+
 import 'package:randomNumbersApp/components/button.dart';
 
 import '../components/mydrawer.dart';
 
 import 'package:flutter/material.dart';
 import '../components/inputtext.dart';
+import '../components/export.dart';
+import 'package:open_file/open_file.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
 
 import 'dart:math';
 
@@ -15,17 +23,50 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
   TextEditingController searchNumber = new TextEditingController();
+  Set<int> numbersList = Set();
 
   generateRandomNumber() {
-    /*final numbersList = new List.generate(10, (_) => Random().nextInt(20));
-    numbersList.shuffle();
-    print(numbersList);*/
-
-    Set<int> numbersList = Set();
     while (numbersList.length < 10000) {
       numbersList.add(Random().nextInt(1000000000) + 1);
     }
     print(numbersList);
+  }
+  /*  Future<String> _getDirPath() async {
+    final _dir = await getApplicationSupportDirectory();
+    return _dir.path;
+  }
+
+  Future<void> _writeData() async {
+    final _dirPath = await _getDirPath();
+    final _myFile = File('$_dirPath/data.txt');
+    await _myFile.writeAsString(numbersList.toString());
+  } */
+
+  popUp() {
+    var validator = true;
+    return showDialog(
+        context: context,
+        builder: (context) {
+          if (validator) {
+            return AlertDialog(
+              content: Text("FOUND"),
+              actions: <Widget>[
+                Button("ok", () {
+                  Navigator.of(context).pop();
+                })
+              ],
+            );
+          } else {
+            return AlertDialog(
+              content: Text("NOT FOUND"),
+              actions: <Widget>[
+                Button("ok", () {
+                  Navigator.of(context).pop();
+                })
+              ],
+            );
+          }
+        });
   }
 
   Widget build(BuildContext context) {
@@ -49,7 +90,9 @@ class HomeState extends State<Home> {
             SizedBox(
               height: 40,
             ),
-            Button('Search', () {}),
+            Button('Search', () {
+              popUp();
+            }),
             SizedBox(
               height: 40,
             ),
@@ -59,7 +102,11 @@ class HomeState extends State<Home> {
             SizedBox(
               height: 40,
             ),
-            Button('Export', () {})
+            Button('Export', () async {
+              final pdfFile =
+                  await Pdf.generateCenteredText(numbersList.toString());
+              Pdf.openFile(pdfFile);
+            })
           ],
         ),
       ),
