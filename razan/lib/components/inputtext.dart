@@ -70,6 +70,7 @@ TextFormField buildUserNameField(TextEditingController myController) {
 
 TextFormField buildSearchField(TextEditingController myController) {
   return TextFormField(
+    keyboardType: TextInputType.number,
     controller: myController,
     decoration: InputDecoration(
         labelText: " Search",
