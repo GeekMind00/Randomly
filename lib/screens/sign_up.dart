@@ -3,6 +3,8 @@ import '../components/button.dart';
 import 'package:flutter/widgets.dart';
 import '../components/inputtext.dart';
 import '../components/mydrawer.dart';
+import '../db/database.dart';
+import 'package:randomNumbersApp/models/userModel.dart';
 
 class Signup extends StatelessWidget {
   final TextEditingController signupEmail = new TextEditingController();
@@ -49,8 +51,16 @@ class Signup extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Button('Sign Up', () {
-                print("hi");
+              Button('Sign Up', ()  async {
+                 User user = new User(
+      userName: signupUsername.text,
+      email: signupEmail.text,
+      password: signupPassword.text,
+    );
+                 user= await UsersDatabase.instance.createUser(user);
+                print(Text(user.password));
+                final result=await UsersDatabase.instance.readAllUsers();
+                print(result[0].password);
               }), // class of buttons
             ],
           ),
@@ -58,4 +68,5 @@ class Signup extends StatelessWidget {
       ),
     );
   }
+  
 }

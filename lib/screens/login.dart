@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test/screens/sign_up.dart';
+import 'package:randomNumbersApp/screens/sign_up.dart';
 import '../components/button.dart';
 import '../components/inputtext.dart';
 import '../components/mydrawer.dart';

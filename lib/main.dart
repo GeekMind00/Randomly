@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test/screens/home.dart';
+import 'package:randomNumbersApp/screens/home.dart';
 import 'screens/login.dart';
 import 'screens/sign_up.dart';
 import 'screens/Splash.dart';
