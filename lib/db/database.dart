@@ -2,8 +2,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:randomNumbersApp/models/userModel.dart';
 
-
-class UsersDatabase{
+class UsersDatabase {
   static final UsersDatabase instance = UsersDatabase._init();
 
   static Database? _database;
@@ -36,12 +35,13 @@ CREATE TABLE $tableUsers (
   ${UserFields.userID} $idType, 
   ${UserFields.userName} $textType,
   ${UserFields.email} $textType,
-  ${UserFields.password} $textType,
+  ${UserFields.password} $textType
   )
 ''');
   }
 
 //======================================================================CONTROLLERS
+
   Future<User> createUser(User user) async {
     final db = await instance.database;
 
@@ -49,7 +49,7 @@ CREATE TABLE $tableUsers (
     return user.copy(userID: userID);
   }
 
-  Future<User> readUser(String userName) async {
+  Future<List> readUser(String userName) async {
     final db = await instance.database;
 
     final maps = await db.query(
@@ -60,13 +60,14 @@ CREATE TABLE $tableUsers (
     );
 
     if (maps.isNotEmpty) {
-      return User.fromJson(maps.first);
+      return [User.fromJson(maps.first), 1];
     } else {
-      throw Exception('User $userName not found!');
+      // User emptyUser=new User(userName:"none",password:"none",email:"none");
+      return [User.fromJson(maps.first), 0];
     }
   }
 
- Future<List<User>> readAllUsers() async {
+  Future<List<User>> readAllUsers() async {
     final db = await instance.database;
 
     // final result =
@@ -77,11 +78,9 @@ CREATE TABLE $tableUsers (
     return result.map((json) => User.fromJson(json)).toList();
   }
 
-
   Future close() async {
     final db = await instance.database;
 
     db.close();
   }
 }
-

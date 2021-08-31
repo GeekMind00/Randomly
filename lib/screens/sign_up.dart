@@ -51,16 +51,13 @@ class Signup extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Button('Sign Up', ()  async {
-                 User user = new User(
-      userName: signupUsername.text,
-      email: signupEmail.text,
-      password: signupPassword.text,
-    );
-                 user= await UsersDatabase.instance.createUser(user);
-                print(Text(user.password));
-                final result=await UsersDatabase.instance.readAllUsers();
-                print(result[0].password);
+              Button('Sign Up', () async {
+                // user = await UsersDatabase.instance.createUser(user);
+                // // print(Text(user.password));
+                // final result = await UsersDatabase.instance.readAllUsers();
+                // //   print(result[3].userName);
+                // user = await UsersDatabase.instance.readUser("sasaGame");
+                // print(user.userName);
               }), // class of buttons
             ],
           ),
@@ -68,5 +65,4 @@ class Signup extends StatelessWidget {
       ),
     );
   }
-  
 }
