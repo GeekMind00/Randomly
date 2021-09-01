@@ -51,7 +51,13 @@ $ flutter run
 <br>
 <img src='./assets/images/2.jpeg'height='500'>
 <br>
+<img src='./assets/images/userNotFound.jpeg'height='500'>
+<br>
 <img src='./assets/images/3.jpeg'height='500'>
+<br>
+<img src='./assets/images/Found.jpeg'height='500'>
+<br>
+<img src='./assets/images/notFound.jpeg'height='500'>
 <br>
 <img src='./assets/images/4.jpeg'height='500'>
 <br>
