@@ -4,7 +4,7 @@
 
 > Randomly is a user-based Mobile application that has the functionality to:
 > - Generate 10,000 numbers randomly from a range of [0,1e9].
-> - Search for a certain number within those randomly generated numbers. 
+> - Search for a certain number within those randomly generated numbers using binary search algorithm. 
 > - Export those randomly generated numbers into a pdf file.
 
 ### Built with
