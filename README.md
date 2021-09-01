@@ -46,12 +46,17 @@ $ flutter run
 
 ### Screenshots
 
-<div align="center">  
-<img src='./assets/images/1.png'>
-<img src='./assets/images/2.jpeg'>
-<img src='./assets/images/3.jpeg'>
-<img src='./assets/images/4.jpeg'>
-<img src='./assets/images/5.jpeg'>
-<img src='./assets/images/6.jpeg'>
+<div id="img" align="center">  
+<img src='./assets/images/1.jpeg'height='500'>
+<br>
+<img src='./assets/images/2.jpeg'height='500'>
+<br>
+<img src='./assets/images/3.jpeg'height='500'>
+<br>
+<img src='./assets/images/4.jpeg'height='500'>
+<br>
+<img src='./assets/images/5.jpeg'height='500'>
+<br>
+<img src='./assets/images/6.jpeg'height='500'>
 </div>
 
