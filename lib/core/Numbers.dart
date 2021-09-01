@@ -14,6 +14,6 @@ class Numbers {
     numbersList.sort(); //sorts in O(nlogn)
 
     //returns -1 if number not found, otherwise returns the index of the number in the list which is irrelevant here
-    return binarySearch(numbersList, tragetNumber);
+    return binarySearch(numbersList, tragetNumber); //searches in O(logn)
   }
 }

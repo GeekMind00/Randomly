@@ -58,7 +58,6 @@ CREATE TABLE $tableUsers (
     );
 
     if (maps.isNotEmpty) {
-      print("l2eto");
       return [User.fromJson(maps.first), 1];
     } else {
       User emptyUser =
@@ -69,9 +68,6 @@ CREATE TABLE $tableUsers (
 
   Future<List<User>> readAllUsers() async {
     final db = await instance.database;
-
-    // final result =
-    //     await db.rawQuery('SELECT * FROM $tableNotes ORDER BY $orderBy');
 
     final result = await db.query(tableUsers);
 
