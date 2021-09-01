@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import '../components/button.dart';
 import 'package:flutter/widgets.dart';
-import '../components/inputtext.dart';
+import '../components/inputText.dart';
 import '../components/mydrawer.dart';
-import '../db/database.dart';
 import '../controllers/userController.dart';
-import 'package:randomNumbersApp/models/userModel.dart';
-
 class Signup extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _SignupState();
@@ -25,7 +22,8 @@ class _SignupState extends State<Signup> {
     if (signupFormstate.currentState!.validate()) {
       await UserController.signUpController(
           signupUsername.text, signupEmail.text, signupPassword.text);
-      print("da5alt sign up");
+          Navigator.of(context).pushNamed("home");
+      
     }
   }
 
@@ -67,13 +65,6 @@ class _SignupState extends State<Signup> {
                 height: 20,
               ),
               Button('Sign Up', () {
-                // user = await UsersDatabase.instance.createUser(user);
-                // // print(Text(user.password));
-                // final result = await UsersDatabase.instance.readAllUsers();
-                // //   print(result[3].userName);
-                // user = await UsersDatabase.instance.readUser("sasaGame");
-                // print(user.userName);
-
                 signup();
               }), // class of buttons
             ],

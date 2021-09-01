@@ -5,15 +5,13 @@ TextFormField buildEmailField(TextEditingController email) {
     controller: email,
     keyboardType: TextInputType.emailAddress,
     decoration: InputDecoration(
-        labelText: "email",
+        labelText: "Email",
         prefixIcon: Padding(
           padding: EdgeInsets.all(10),
           child: Icon(Icons.email_rounded, color: Color(0xff23449d)),
         ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50))),
         validator: (val) {
-          print("here and value is = ");
-          print(val);
           if(val != null) 
           {
             return !val.contains('@') ? 'Invalid Email' : null;

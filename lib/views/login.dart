@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:randomNumbersApp/views/sign_up.dart';
 import '../components/button.dart';
-import '../components/inputtext.dart';
+import '../components/inputText.dart';
 import '../components/mydrawer.dart';
 import '../controllers/userController.dart';
 
@@ -17,15 +16,31 @@ class _LoginState extends State<Login> {
   TextEditingController loginPassword = new TextEditingController();
 
   GlobalKey<FormState> loginFormstate = new GlobalKey<FormState>();
+  showLoginPopUp(String authMessage) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text(authMessage),
+            actions: <Widget>[
+              Button("Ok", () {
+                Navigator.of(context).pop();
+              })
+            ],
+          );
+        });
+  }
 
   logIn() async {
-    print("tmam");
     if (loginFormstate.currentState!.validate()) {
       print(loginUsername.text);
       String authMessage = await UserController.loginController(
           loginUsername.text, loginPassword.text);
-      print(authMessage);
-      print("tmam");
+      if (authMessage == "Access granted!") {
+        Navigator.of(context).pushNamed("home");
+      } else {
+        showLoginPopUp(authMessage);
+      }
     }
   }
 
@@ -65,7 +80,6 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 20,
               ),
-              //Padding(padding: EdgeInsets.only(top: 100)),
               Button('Log In', () {
                 logIn();
               }),

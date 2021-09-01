@@ -19,7 +19,6 @@ class Button extends StatelessWidget {
         
         primary: Color(0xff23449d),
         fixedSize: Size(10, 50),
-        //padding: EdgeInsetsDirectional.all(25),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50)
         ),
