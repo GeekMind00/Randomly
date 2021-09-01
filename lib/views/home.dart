@@ -48,7 +48,7 @@ class HomeState extends State<Home> {
         backgroundColor: Color(0xff23449d),
         centerTitle: true,
       ),
-      drawer: MyDrawer(),
+      //drawer: MyDrawer(),
       body: Container(
         padding: EdgeInsets.fromLTRB(10, 40, 20, 40),
         child: ListView(
@@ -75,7 +75,14 @@ class HomeState extends State<Home> {
               final pdfFile =
                   await Pdf.generateCenteredText(number.numbersList.toString());
               Pdf.openFile(pdfFile);
-            })
+            }),
+            new IconButton(
+            icon: new Icon(Icons.logout),
+            color: Color(0xff23449d),
+            onPressed: () {
+              Navigator.of(context).pushNamed("login");
+            },
+          ),
           ],
         ),
       ),
