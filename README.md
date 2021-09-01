@@ -25,13 +25,13 @@
 1. **_Clone the repository_**
 
 ```sh
-git clone git@github.com:GeekMind00/randomNumbersApp.git
+git clone git@github.com:GeekMind00/Randomly.git
 ```
 
 2. **_Navigate to repository directory_**
 
 ```sh
-$ cd randomNumbersApp
+$ cd Randomly
 ```
 3. **Make sure your emulator is connected to vscode, it should appear on the bottom right bar**
 <div align="center">  
