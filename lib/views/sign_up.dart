@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import '../components/inputtext.dart';
 import '../components/mydrawer.dart';
 import '../db/database.dart';
+import '../controllers/userController.dart';
 import 'package:randomNumbersApp/models/userModel.dart';
 
 class Signup extends StatefulWidget {
@@ -20,11 +21,11 @@ class _SignupState extends State<Signup> {
   GlobalKey<FormState> signupFormstate = new GlobalKey<FormState>();
 
   static String id = 'signupScreen';
-  signup() {
+  signup() async {
     if (signupFormstate.currentState!.validate()) {
-      print("not valid");
-    } else {
-      print("valid");
+      await UserController.signUpController(
+          signupUsername.text, signupEmail.text, signupPassword.text);
+      print("da5alt sign up");
     }
   }
 
@@ -65,15 +66,15 @@ class _SignupState extends State<Signup> {
               SizedBox(
                 height: 20,
               ),
-              Button('Sign Up', () async {
+              Button('Sign Up', () {
                 // user = await UsersDatabase.instance.createUser(user);
                 // // print(Text(user.password));
                 // final result = await UsersDatabase.instance.readAllUsers();
                 // //   print(result[3].userName);
                 // user = await UsersDatabase.instance.readUser("sasaGame");
                 // print(user.userName);
-                // Button('Sign Up', () {
-                //   signup();
+
+                signup();
               }), // class of buttons
             ],
           ),

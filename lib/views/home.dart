@@ -4,7 +4,7 @@ import 'dart:async';
 import 'package:randomNumbersApp/components/button.dart';
 
 import '../components/mydrawer.dart';
-
+import '../core/Numbers.dart';
 import 'package:flutter/material.dart';
 import '../components/inputtext.dart';
 import '../components/export.dart';
@@ -23,14 +23,8 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
   TextEditingController searchNumber = new TextEditingController();
-  Set<int> numbersList = Set();
+  Numbers number = new Numbers();
 
-  generateRandomNumber() {
-    while (numbersList.length < 10000) {
-      numbersList.add(Random().nextInt(1000000000) + 1);
-    }
-    print(numbersList);
-  }
   /*  Future<String> _getDirPath() async {
     final _dir = await getApplicationSupportDirectory();
     return _dir.path;
@@ -42,12 +36,12 @@ class HomeState extends State<Home> {
     await _myFile.writeAsString(numbersList.toString());
   } */
 
-  popUp() {
-    var validator = true;
+  popUp(int found) {
+    //var validator = true;
     return showDialog(
         context: context,
         builder: (context) {
-          if (validator) {
+          if (found != -1) {
             return AlertDialog(
               content: Text("FOUND"),
               actions: <Widget>[
@@ -91,20 +85,23 @@ class HomeState extends State<Home> {
               height: 40,
             ),
             Button('Search', () {
-              popUp();
+              int found = number.search(int.parse(searchNumber.text));
+              //if (found == -1) print("not found");
+              popUp(found);
             }),
             SizedBox(
               height: 40,
             ),
             Button('Generate', () {
-              generateRandomNumber();
+              number.generateRandomNumber();
+              print(number.numbersList[0]);
             }),
             SizedBox(
               height: 40,
             ),
             Button('Export', () async {
               final pdfFile =
-                  await Pdf.generateCenteredText(numbersList.toString());
+                  await Pdf.generateCenteredText(number.numbersList.toString());
               Pdf.openFile(pdfFile);
             })
           ],

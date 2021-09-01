@@ -3,6 +3,7 @@ import 'package:randomNumbersApp/views/sign_up.dart';
 import '../components/button.dart';
 import '../components/inputtext.dart';
 import '../components/mydrawer.dart';
+import '../controllers/userController.dart';
 
 class Login extends StatefulWidget {
   State<StatefulWidget> createState() {
@@ -17,11 +18,14 @@ class _LoginState extends State<Login> {
 
   GlobalKey<FormState> loginFormstate = new GlobalKey<FormState>();
 
-  logIn() {
+  logIn() async {
+    print("tmam");
     if (loginFormstate.currentState!.validate()) {
-      print("not valid");
-    } else {
-      print("valid");
+      print(loginUsername.text);
+      String authMessage = await UserController.loginController(
+          loginUsername.text, loginPassword.text);
+      print(authMessage);
+      print("tmam");
     }
   }
 

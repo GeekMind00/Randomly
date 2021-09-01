@@ -10,8 +10,6 @@ class UsersDatabase {
   UsersDatabase._init();
 
   Future<Database> get database async {
-    // if (_database != null) return _database!;
-
     _database = await _initDB('AppDatabase.db');
     return _database!;
   }
@@ -40,7 +38,7 @@ CREATE TABLE $tableUsers (
 ''');
   }
 
-//======================================================================CONTROLLERS
+//====================DB QUERIES==========================================================
 
   Future<User> createUser(User user) async {
     final db = await instance.database;
@@ -60,10 +58,12 @@ CREATE TABLE $tableUsers (
     );
 
     if (maps.isNotEmpty) {
+      print("l2eto");
       return [User.fromJson(maps.first), 1];
     } else {
-      // User emptyUser=new User(userName:"none",password:"none",email:"none");
-      return [User.fromJson(maps.first), 0];
+      User emptyUser =
+          new User(userName: "none", password: "none", email: "none");
+      return [emptyUser, 0];
     }
   }
 
